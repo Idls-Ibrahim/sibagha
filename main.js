@@ -54,7 +54,7 @@ const colors = document.querySelectorAll('.divs div');
 const screenTwo = document.querySelector('.scren');
 const inputColor = document.querySelector("#color");
 
-inputColor.onblur = ()=>{
+inputColor.oninput = ()=>{
     screenTwo.style.backgroundColor =  inputColor.value ;
 }
 
