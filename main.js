@@ -6,13 +6,24 @@ document.querySelector('.close').onclick = ()=>{
     document.querySelector('.nav').classList.remove('open');
 }
 // switch dark or light mode
+const body = document.querySelector('body');
+
+if(window.localStorage.getItem("theme")=="dark"){
+    body.classList.add("dark");
+}
+else{
+    body.classList.remove("dark");
+}
+
 document.querySelector('.moon').onclick = ()=>{
-    document.querySelector('body').classList.add('dark');
+    body.classList.add("dark");
+    window.localStorage.setItem("theme", body.className);
     document.querySelector('.sun').classList.remove('remove');
     document.querySelector('.moon').classList.add('remove');
 }
 document.querySelector('.sun').onclick = ()=>{
-    document.querySelector('body').classList.remove('dark');
+    body.classList.remove('dark');
+    window.localStorage.setItem("theme", body.className);
     document.querySelector('.sun').classList.add('remove');
     document.querySelector('.moon').classList.remove('remove');
 }
